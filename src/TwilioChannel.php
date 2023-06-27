@@ -45,7 +45,7 @@ class TwilioChannel
     {
         try {
             $to = $this->getTo($notifiable, $notification);
-            $message = $notification->toTwilio($notifiable);
+            $message = $this->getMessage($notifiable, $notification);
             $useSender = $this->canReceiveAlphanumericSender($notifiable);
 
             if (is_string($message)) {
@@ -73,6 +73,19 @@ class TwilioChannel
 
             throw $exception;
         }
+    }
+
+    /**
+     * Get the message to send.
+     *
+     * @param mixed $notifiable
+     * @param Notification $notification
+     *
+     * @return mixed
+     */
+    protected function getMessage($notifiable, Notification $notification)
+    {
+        return $notification->toTwilio($notifiable);
     }
 
     /**
