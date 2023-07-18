@@ -1,5 +1,5 @@
 {
-    "name": "laravel-notification-channels/twilio",
+    "name": "shelterluv/twilio-notification-channel",
     "description": "Provides Twilio notification channel for Laravel",
     "keywords": [
         "laravel",
